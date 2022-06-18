@@ -1,0 +1,27 @@
+Input variables:
+   # 銀行的客戶資訊:
+   1 - age :年齡(numeric)
+   2 - job : 工作類型(categorical: "admin.","blue-collar","entrepreneur","housemaid","management","retired","self-employed","services","student","technician","unemployed","unknown")
+   3 - marital : 婚姻狀態 (categorical: "divorced","married","single","unknown"; note: "divorced" means divorced or widowed)
+   4 - education :學歷(categorical: "basic.4y","basic.6y","basic.9y","high.school","illiterate","professional.course","university.degree","unknown")
+   5 - default: 有信用違約過嗎？ (categorical: "no","yes","unknown")
+   6 - housing: 有房屋貸款嗎? (categorical: "no","yes","unknown")
+   7 - loan: 有個人貸款嗎? (categorical: "no","yes","unknown")
+   # 與當前活動的最後一次聯繫相關:
+   8 - contact: 聯繫方式 (categorical: "cellular","telephone")
+   9 - month: 一年中的最後一個聯繫月份 (categorical: "jan", "feb", "mar", ..., "nov", "dec")
+  10 - day_of_week: 一周中的最後一個聯繫日 (categorical: "mon","tue","wed","thu","fri")
+  11 - duration: 最後聯繫的秒數 (numeric). Important note:  this attribute highly affects the output target (e.g., if duration=0 then y="no"). Yet, the duration is not known before a call is performed. Also, after the end of the call y is obviously known. Thus, this input should only be included for benchmark purposes and should be discarded if the intention is to have a realistic predictive model.
+   # 其他相關變數:
+  12 - campaign: 在此活動期間以及為此客戶執行的聯繫次數 (numeric, includes last contact)
+  13 - pdays: 從上一個活動中最後一次聯繫客戶之後經過的天數（數字；999 表示之前沒有聯繫過客戶）
+  14 - previous: 在此活動之前和為此客戶執行的聯繫次數 (numeric)
+  15 - poutcome: 上一次營銷活動的結果 (categorical: "failure","nonexistent","success")
+   # 社會經濟背景屬性
+  16 - emp.var.rate: 就業變動率 - 季度指標 (numeric)
+  17 - cons.price.idx:  消費者價格指數 - 月度指標(numeric)     
+  18 - cons.conf.idx: 消費者信心指數 - 月度指標 (numeric)     
+  19 - euribor3m: euribor 3 個月利率 - 每日指標 (numeric)
+  20 - nr.employed: 員工人數 - 季度指標 (numeric)
+Output variable (desired target):
+  21 - y - 客戶是否訂閱了定期存款? (binary: "yes","no")
